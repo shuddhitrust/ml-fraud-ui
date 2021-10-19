@@ -1,6 +1,6 @@
 ## About
 
-This repo contains the Angular-based UI for the Vidhya.io app. This README file details everything you need to know about this project.
+This repo contains the Angular-based UI for the Starter UI app. This README file details everything you need to know about this project.
 
 ## Versions
 
@@ -20,12 +20,12 @@ The following instructions assumes that you are attempting to setup the project 
 
 ## Project Setup
 
-1. Create the new project with `ng new vidhya-ui` and use the following options for configuration:-
+1. Create the new project with `ng new starter-ui` and use the following options for configuration:-
    1. Would you like to add Angular routing? Yes
    2. Which stylesheet format would you like to use? SCSS
 2. Enter the project folder with `cd`
-3. Build and tag a Docker image with `docker build -t vidhya-ui:dev .`
-4. Spin up the Docker container with `docker run -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --rm vidhya-ui:dev`
+3. Build and tag a Docker image with `docker build -t starter-ui:dev .`
+4. Spin up the Docker container with `docker run -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --rm starter-ui:dev`
    1. The application should be available on `https://localhost/4201`
 
 ## Netlify Deployment

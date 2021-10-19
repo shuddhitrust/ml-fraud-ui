@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "vidhya-ui": {
+    "starter-ui": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/vidhya-ui",
+            "outputPath": "dist/starter-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -113,13 +113,13 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "staging": {
-              "browserTarget": "vidhya-ui:build:staging"
+              "browserTarget": "starter-ui:build:staging"
             },
             "production": {
-              "browserTarget": "vidhya-ui:build:production"
+              "browserTarget": "starter-ui:build:production"
             },
             "development": {
-              "browserTarget": "vidhya-ui:build:development"
+              "browserTarget": "starter-ui:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -127,7 +127,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "vidhya-ui:build"
+            "browserTarget": "starter-ui:build"
           }
         },
         "test": {
@@ -149,5 +149,5 @@
       }
     }
   },
-  "defaultProject": "vidhya-ui"
+  "defaultProject": "starter-ui"
 }

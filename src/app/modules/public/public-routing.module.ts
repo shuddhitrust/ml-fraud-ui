@@ -4,8 +4,6 @@ import { uiroutes } from './../../shared/common/ui-routes';
 import { HomeComponent } from './components/pages/home/home.component';
 import { PasswordResetComponent } from './components/pages/password-reset/password-reset.component';
 import { PrivacyComponent } from './components/pages/privacy/privacy.component';
-import { InstitutionProfileComponent } from './components/profiles/public-institution-profile/public-institution-profile.component';
-import { PublicUserProfileComponent } from './components/profiles/public-user-profile/public-user-profile.component';
 
 /**
  * Public routes
@@ -14,16 +12,6 @@ import { PublicUserProfileComponent } from './components/profiles/public-user-pr
  * Without making these changes the route would not show.
  */
 const routes: Routes = [
-  {
-    path: `${uiroutes.MEMBER_PROFILE_ROUTE.route}/:username`,
-    component: PublicUserProfileComponent,
-    pathMatch: 'full',
-  },
-  {
-    path: `${uiroutes.INSTITUTION_PROFILE_ROUTE.route}/:code`,
-    component: InstitutionProfileComponent,
-    pathMatch: 'full',
-  },
   {
     path: uiroutes.PRIVACY_ROUTE.route,
     component: PrivacyComponent,

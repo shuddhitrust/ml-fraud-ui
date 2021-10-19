@@ -13,7 +13,7 @@ import { uiroutes } from './shared/common/ui-routes';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'vidhya-ui';
+  title = 'starter-ui';
   uiroutes = uiroutes;
   @Select(AuthState.getIsFullyAuthenticated)
   isFullyAuthenticated$: Observable<boolean>;

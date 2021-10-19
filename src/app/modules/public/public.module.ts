@@ -7,25 +7,17 @@ import { PublicComponent } from './components/public/public.component';
 import { AuthModule } from '../auth/auth.module';
 import { ErrorPageComponent } from './components/pages/error/error.component';
 import { PublicTabsComponent } from './components/feed/public-lists.component';
-import { PublicLearnersFeedComponent } from './components/feed/learners-feed/learners-feed.component';
-import { InstitutionProfileComponent } from './components/profiles/public-institution-profile/public-institution-profile.component';
-import { InstitutionsFeedComponent } from './components/feed/institutions-feed/institutions-feed.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { PasswordResetComponent } from './components/pages/password-reset/password-reset.component';
 import { PrivacyComponent } from './components/pages/privacy/privacy.component';
-import { PublicUserProfileComponent } from './components/profiles/public-user-profile/public-user-profile.component';
 
 const declarations = [
   HomeComponent,
   PasswordResetComponent,
   PrivacyComponent,
-  PublicUserProfileComponent,
   PublicComponent,
   ErrorPageComponent,
   PublicTabsComponent,
-  PublicLearnersFeedComponent,
-  InstitutionsFeedComponent,
-  InstitutionProfileComponent,
 ];
 
 @NgModule({

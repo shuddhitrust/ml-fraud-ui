@@ -11,8 +11,6 @@ import {
 } from 'src/app/shared/common/models';
 import { uiroutes } from '../../shared/common/ui-routes';
 import { AuthState } from '../auth/state/auth.state';
-import { GetUnreadCountAction } from './state/dashboard.actions';
-import { unreadCountType } from './state/dashboard.model';
 import { DashboardState } from './state/dashboard.state';
 
 export const ADMIN = 'Admin';
@@ -25,25 +23,10 @@ export const REPORTS = 'Reports';
 
 const tabIndexList = {
   0: ADMIN,
-  1: ANNOUNCEMENTS,
-  2: ASSIGNMENTS,
-  3: COURSES,
-  4: GROUPS,
-  5: GRADING,
-  6: REPORTS,
 };
 
 const adminEntities = [
-  { value: resources.MODERATION, label: ADMIN_SECTION_LABELS.MODERATION },
   { value: resources.USER_ROLE, label: ADMIN_SECTION_LABELS.USER_ROLES },
-  { value: resources.INSTITUTION, label: ADMIN_SECTION_LABELS.INSTITUTIONS },
-  { value: resources.MEMBER, label: ADMIN_SECTION_LABELS.MEMBERS },
-  {
-    value: resources.INSTITUTION_ADMIN,
-    label: ADMIN_SECTION_LABELS.INSTITUTION_ADMINS,
-  },
-  { value: resources.CLASS_ADMIN, label: ADMIN_SECTION_LABELS.CLASS_ADMINS },
-  { value: resources.LEARNER, label: ADMIN_SECTION_LABELS.LEARNERS },
 ];
 
 @Component({
@@ -53,12 +36,6 @@ const adminEntities = [
 })
 export class DashboardComponent implements OnInit {
   ADMIN = ADMIN;
-  ANNOUNCEMENTS = ANNOUNCEMENTS;
-  ASSIGNMENTS = ASSIGNMENTS;
-  COURSES = COURSES;
-  GROUPS = GROUPS;
-  GRADING = GRADING;
-  REPORTS = REPORTS;
   activeTabIndex = 0;
   tabIndexList = tabIndexList;
   params: object = {};
@@ -66,9 +43,6 @@ export class DashboardComponent implements OnInit {
   permissions$: Observable<UserPermissions>;
   resources = resources;
   visibleTabs = [];
-  @Select(DashboardState.getUnreadCount)
-  unreadCount$: Observable<unreadCountType>;
-  unreadCount: unreadCountType;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -78,10 +52,6 @@ export class DashboardComponent implements OnInit {
     this.permissions$.subscribe((val) => {
       this.populateVisibleTabs();
     });
-    this.unreadCount$.subscribe((val) => {
-      this.unreadCount = val;
-    });
-    this.store.dispatch(new GetUnreadCountAction());
   }
 
   ngOnInit(): void {
@@ -111,24 +81,7 @@ export class DashboardComponent implements OnInit {
       switch (tab) {
         case ADMIN:
           return this.processEntities().length;
-        case ANNOUNCEMENTS:
-          return this.authorizeResourceMethod(resources.ANNOUNCEMENT);
-        case ASSIGNMENTS:
-          return this.authorizeResourceMethod(
-            resources.EXERCISE_SUBMISSION,
-            RESOURCE_ACTIONS.CREATE
-          );
-        case COURSES:
-          return this.authorizeResourceMethod(resources.COURSE);
-        case GROUPS:
-          return this.authorizeResourceMethod(resources.GROUP);
-        case GRADING:
-          return this.authorizeResourceMethod(resources.GRADING);
-        case REPORTS:
-          return this.authorizeResourceMethod(
-            resources.REPORT,
-            RESOURCE_ACTIONS.LIST
-          );
+
         default:
           return false;
       }

@@ -16,26 +16,6 @@
     </mat-selection-list></nz-sider
   >
   <nz-layout>
-    <app-awaiting-moderation-table
-      *ngIf="selectedEntity == moderation"
-    ></app-awaiting-moderation-table>
-
     <app-roles-table *ngIf="selectedEntity == userRoles"></app-roles-table>
-
-    <app-institutions-table
-      *ngIf="selectedEntity == institutions"
-    ></app-institutions-table>
-
-    <app-members-table *ngIf="selectedEntity == members"></app-members-table>
-
-    <app-institution-admins-table
-      *ngIf="selectedEntity == institutionAdmins"
-    ></app-institution-admins-table>
-
-    <app-class-admins-table
-      *ngIf="selectedEntity == classAdmins"
-    ></app-class-admins-table>
-
-    <app-learners-table *ngIf="selectedEntity == learners"></app-learners-table>
   </nz-layout>
 </nz-layout>

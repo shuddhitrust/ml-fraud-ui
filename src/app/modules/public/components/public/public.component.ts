@@ -9,7 +9,7 @@ import { uiroutes } from 'src/app/shared/common/ui-routes';
   styleUrls: ['./public.component.scss'],
 })
 export class PublicComponent {
-  title = 'vidhya-ui';
+  title = 'starter-ui';
   uiroutes = uiroutes;
   @Input() firstTimeSetup;
   constructor(private router: Router, private readonly location: Location) {}
@@ -32,7 +32,6 @@ export class PublicComponent {
       uiroutes.MEMBER_FORM_ROUTE.route,
       uiroutes.PASSWORD_RESET_ROUTE.route,
       uiroutes.MEMBER_PROFILE_ROUTE.route,
-      uiroutes.INSTITUTION_PROFILE_ROUTE.route,
       uiroutes.ERROR_ROUTE.route,
     ];
     return this.currentRouteNoteEquals(routes);
@@ -52,13 +51,6 @@ export class PublicComponent {
         break;
       case uiroutes.MEMBER_PROFILE_ROUTE.route:
         if (this.router.url.includes(uiroutes.MEMBER_PROFILE_ROUTE.route)) {
-          return true;
-        }
-        break;
-      case uiroutes.INSTITUTION_PROFILE_ROUTE.route:
-        if (
-          this.router.url.includes(uiroutes.INSTITUTION_PROFILE_ROUTE.route)
-        ) {
           return true;
         }
         break;

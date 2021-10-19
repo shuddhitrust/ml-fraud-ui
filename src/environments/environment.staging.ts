@@ -8,10 +8,10 @@
 //   websocket_graphql_endpoint: `${websocket_api_endpoint}/graphql/`,
 // };
 
-const api_endpoint = 'https://vidhya-io-staging.herokuapp.com';
-const websocket_api_endpoint = 'wss://vidhya-io-staging.herokuapp.com';
-const cloudinary_endpoint = 'https://api.cloudinary.com/v1_1/svidhya';
-const cloudinary_preset = 'l4vdzicq';
+const api_endpoint = 'https://<URL>';
+const websocket_api_endpoint = 'wss://<URL>';
+const cloudinary_endpoint = 'https://api.cloudinary.com/v1_1/<bucket-name>';
+const cloudinary_preset = '';
 
 export const environment = {
   production: true,

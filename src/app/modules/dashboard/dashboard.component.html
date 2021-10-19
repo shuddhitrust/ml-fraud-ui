@@ -19,38 +19,4 @@
           [entities]="processEntities()"
         ></app-admin-dashboard></div></ng-template
   ></nz-tab>
-  <nz-tab
-    [nzTitle]="announcementsTitleTemplate"
-    *ngIf="visibleTabs.includes(ANNOUNCEMENTS)"
-  >
-    <ng-template #announcementsTitleTemplate>
-      <nz-badge *ngIf="unreadCount?.announcements > 0" nzDot nzStandalone>
-      </nz-badge>
-      &nbsp;{{ ANNOUNCEMENTS }}
-    </ng-template>
-    <ng-template nz-tab>
-      <app-announcement-dashboard></app-announcement-dashboard> </ng-template
-  ></nz-tab>
-  <nz-tab [nzTitle]="ASSIGNMENTS" *ngIf="visibleTabs.includes(ASSIGNMENTS)">
-    <ng-template nz-tab>
-      <app-assignment-dashboard></app-assignment-dashboard> </ng-template
-  ></nz-tab>
-  <nz-tab [nzTitle]="COURSES" *ngIf="visibleTabs.includes(COURSES)">
-    <ng-template nz-tab>
-      <app-course-dashboard></app-course-dashboard
-    ></ng-template>
-  </nz-tab>
-  <nz-tab [nzTitle]="GROUPS" *ngIf="visibleTabs.includes(GROUPS)">
-    <ng-template nz-tab>
-      <app-group-dashboard></app-group-dashboard
-    ></ng-template>
-  </nz-tab>
-  <nz-tab [nzTitle]="GRADING" *ngIf="visibleTabs.includes(GRADING)">
-    <ng-template nz-tab>
-      <app-grading-dashboard></app-grading-dashboard> </ng-template
-  ></nz-tab>
-  <nz-tab [nzTitle]="REPORTS" *ngIf="visibleTabs.includes(REPORTS)">
-    <ng-template nz-tab>
-      <app-report-dashboard></app-report-dashboard></ng-template
-  ></nz-tab>
 </nz-tabset>
