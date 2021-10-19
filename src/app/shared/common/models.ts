@@ -1,5 +1,4 @@
-import { defaultPageSize } from '../modules/master-grid/table.model';
-import { defaultSearchParams } from './constants';
+import { defaultPageSize, defaultSearchParams } from './constants';
 import { autoGenOptions } from './functions';
 
 /* 

@@ -20,4 +20,5 @@ export const environment = {
   cloudinary_preset,
   graphql_endpoint: `${api_endpoint}/graphql/`,
   websocket_graphql_endpoint: `${websocket_api_endpoint}/graphql/`,
+  recaptcha_site_key: '6LcCWfIUAAAAALvgSsvP9dKFqC1EtVtkj0IQBC5y',
 };

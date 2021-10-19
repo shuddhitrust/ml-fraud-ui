@@ -13,14 +13,6 @@ export class AdminDashboardComponent implements OnInit {
   @Input() params: object = {};
   opened: boolean = true;
   @Input() entities: any[] = [];
-
-  moderation: string = resources.MODERATION;
-  userRoles: string = resources.USER_ROLE;
-  institutions: string = resources.INSTITUTION;
-  members: string = resources.MEMBER;
-  institutionAdmins: string = resources.INSTITUTION_ADMIN;
-  classAdmins: string = resources.CLASS_ADMIN;
-  learners: string = resources.LEARNER;
   selectedEntity;
 
   constructor(

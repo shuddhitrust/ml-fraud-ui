@@ -1,0 +1,37 @@
+<div style="width: 100%;">
+  <form [formGroup]="contactForm" (ngSubmit)="handleSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput required #input placeholder="Your Name">
+      <mat-error *ngIf="showError('name', 'required')">Name is required</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input formControlName="email" matInput required #input placeholder="Your Email">
+      <mat-error *ngIf="showError('email', 'required')">Email is required</mat-error>
+      <mat-error *ngIf="showError('email', 'email')">Email must be valid</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Subject</mat-label>
+      <input formControlName="subject" matInput required #input placeholder="What is this about?">
+      <mat-error *ngIf="showError('subject', 'required')">Subject is required</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Message</mat-label>
+      <textarea formControlName="content" matInput required placeholder="Your message"></textarea>
+      <mat-error *ngIf="showError('content', 'required')">Message is required</mat-error>
+    </mat-form-field>
+    <br>
+    <div style="margin-top: 5px;">
+      <re-captcha (resolved)="resolved($event)"></re-captcha>
+      <mat-error class="captcha-error" *ngIf="showRecaptchaError()">Captcha
+        verification is required
+      </mat-error>
+    </div>
+    <br><br>
+    <button type="submit" mat-raised-button color="primary" class="submit-button">Submit</button>
+  </form>
+</div>

@@ -2,17 +2,11 @@ import { NgModule } from '@angular/core';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { LoginModalComponent } from '../auth/components/login/login-modal.component';
-import { LMarkdownEditorModule } from 'ngx-markdown-editor';
-import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
-import { HttpClient } from '@angular/common/http';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { MasterConfirmationDialog } from 'src/app/shared/components/confirmation-dialog/confirmation-dialog.component';
 import { ImageDisplayDialog } from 'src/app/shared/components/image-display/image-display-dialog.component';
 import { SharedModule } from 'src/app/shared/modules/shared.module';
-import { MasterGridModule } from 'src/app/shared/modules/master-grid/master-grid.module';
 import { AdminModule } from './modules/admin/admin.module';
-import { markedOptionsFactory } from 'src/app/shared/common/constants';
 import { DashboardState } from './state/dashboard.state';
 import { NgxsModule } from '@ngxs/store';
 // import { ChatModule } from './modules/chat/chat.module';
@@ -26,16 +20,6 @@ import { NgxsModule } from '@ngxs/store';
   ],
   imports: [
     SharedModule,
-    MasterGridModule,
-    InfiniteScrollModule,
-    LMarkdownEditorModule,
-    MarkdownModule.forRoot({
-      loader: HttpClient,
-      markedOptions: {
-        provide: MarkedOptions,
-        useFactory: markedOptionsFactory,
-      },
-    }),
     HotToastModule.forRoot(),
     NgxsModule.forFeature([DashboardState]),
     AdminModule,

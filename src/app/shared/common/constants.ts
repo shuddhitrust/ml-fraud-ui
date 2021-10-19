@@ -1,6 +1,20 @@
-import { MarkedOptions, MarkedRenderer } from 'ngx-markdown';
-import { SearchParams } from '../modules/master-grid/table.model';
+export const pageSizeOptions = [
+  { label: '20', value: 20 },
+  { label: '50', value: 50 },
+  { label: '100', value: 100 },
+  { label: '200', value: 200 },
+];
 
+export const defaultPageSize = pageSizeOptions[0].value;
+
+export class SearchParams {
+  pageNumber: number = 1;
+  pageSize: number = defaultPageSize;
+  sortField?: string = null;
+  sortOrder?: string = null;
+  searchQuery: string = null;
+  columnFilters: any = null;
+}
 export const secondInMillseconds = 60000;
 export const minute = 60;
 export const hour = minute * 60;
@@ -44,29 +58,3 @@ export const ADMIN_SECTION_LABELS = {
   MODERATION: 'Moderation',
   USER_ROLES: 'User Roles',
 };
-
-/**
- * Marked options for import into modules that use Markdown
- */
-export function markedOptionsFactory(): MarkedOptions {
-  const renderer = new MarkedRenderer();
-
-  renderer.blockquote = (text: string) => {
-    return '<blockquote class="blockquote"><p>' + text + '</p></blockquote>';
-  };
-
-  const linkRenderer = renderer.link;
-  renderer.link = (href, title, text) => {
-    const html = linkRenderer.call(renderer, href, title, text);
-    return html.replace(/^<a /, '<a target="_blank" rel="nofollow" ');
-  };
-
-  return {
-    renderer: renderer,
-    gfm: true,
-    breaks: false,
-    pedantic: false,
-    smartLists: true,
-    smartypants: false,
-  };
-}

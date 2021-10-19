@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { uiroutes } from './../../shared/common/ui-routes';
+import { AboutComponent } from './components/pages/about/about.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { PasswordResetComponent } from './components/pages/password-reset/password-reset.component';
 import { PrivacyComponent } from './components/pages/privacy/privacy.component';
+import { SupportComponent } from './components/pages/support/support.component';
 
 /**
  * Public routes
@@ -32,6 +34,14 @@ const routes: Routes = [
     component: HomeComponent,
     pathMatch: 'full',
   },
+  { path: uiroutes.ABOUT_ROUTE.route, component: AboutComponent },
+  { path: uiroutes.SUPPORT_ROUTE.route, component: SupportComponent },
+  {
+    path: uiroutes.CONTACT_ROUTE.route,
+    loadChildren: () =>
+      import('./modules/contact/contact.module').then((m) => m.ContactModule),
+  },
+  { path: 'privacy', component: PrivacyComponent },
   { path: '', component: HomeComponent },
   // End of public routes
 ];

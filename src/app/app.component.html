@@ -1,15 +1,145 @@
-<div id="main">
-  <app-navbar></app-navbar>
-  <router-outlet
-    *ngIf="isFullyAuthenticated$ | async; else publicTemplate"
-  ></router-outlet>
-  <!-- <router-outlet *ngIf="showApp; else homePage"></router-outlet> -->
+<nav
+  class="navbar navbar-expand-lg fixed-top navbar-light"
+  style="
+    background-color: #fff;
+    border-bottom: 1px solid var(--shuddhi-color);
+    padding: 2px 20px;
+  "
+>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#topnav"
+    aria-controls="topnav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    class="navbar-toggler collapsed"
+    id="topnav-dropdown-toggle"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand desktop-only zoom-on-hover" routerLink="/"
+    ><img src="assets/images/logo/logo.png" height="35px" alt="Official Logo"
+  /></a>
+  <a class="navbar-brand mobile-only zoom-on-hover" routerLink="/"
+    ><img
+      src="assets/images/logo/logo-mini.svg"
+      height="35px"
+      alt="Official Logo"
+  /></a>
+  <div class="collapse navbar-collapse" id="topnav">
+    <ul class="navbar-nav ml-md-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [href]="medium"
+          target="blank"
+          rel="noreferrer noopener"
+          ><i style="color: black" class="fa fa-medium"></i> Blog</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/support">Support</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contact">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div id="main-content">
+  <router-outlet></router-outlet>
+</div>
+<nav
+  class="navbar navbar-expand fixed-bottom navbar-light bg-light desktop-only"
+  style="
+    background: rgba(0, 0, 0, 0.01);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    display: block;
+  "
+>
+  <div class="navbar-collapse" id="bottomnav">
+    <ul class="navbar-nav footer-links">
+      <ng-container [ngTemplateOutlet]="footerLinks"> </ng-container>
+    </ul>
+    <footer class="unselectable copyright-text-desktop">
+      Copyright &copy; {{ currentYear }} Shuddhi Trust, All Rights Reserved
+    </footer>
+    <ul class="navbar-nav ml-md-auto footer-links">
+      <li class="nav-link">
+        <a routerLink="/privacy">Privacy</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<p class="mobile-only">
+  <button
+    mat-mini-fab
+    color="accent"
+    aria-label="Toggle Bottom Nav"
+    data-toggle="collapse"
+    data-target="#collapseExample"
+    aria-expanded="false"
+    aria-controls="collapseExample"
+    (click)="toggleMobileBottomnav()"
+    style="
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      background: var(--shuddhi-color);
+      cursor: pointer;
+    "
+  >
+    <i [class]="mobileBottomNavIcon" style="color: white"></i>
+  </button>
+</p>
+<div
+  class="collapse mobile-only"
+  id="collapseExample"
+  style="border-top: 1px solid rgba(0, 0, 0, 0.1)"
+>
+  <div style="display: block; margin-left: auto; margin-right: auto">
+    <ul
+      class="
+        navbar-nav
+        bd-navbar-nav
+        flex-row
+        footer-links
+        justify-content-center
+      "
+    >
+      <ng-container [ngTemplateOutlet]="footerLinks"> </ng-container>
+      <li class="nav-link">
+        <a routerLink="/privacy">Privacy</a>
+      </li>
+    </ul>
+  </div>
+  <footer class="unselectable copyright-text">
+    Copyright &copy; {{ currentYear }} Shuddhi Trust, All Rights Reserved
+  </footer>
 </div>
 
-<ng-template #publicTemplate>
-  <app-public-component
-    [firstTimeSetup]="firstTimeSetup"
-  ></app-public-component>
+<ng-template #footerLinks>
+  <li class="nav-link">
+    <a [href]="youtube" target="blank" rel="noreferrer noopener"
+      ><i style="color: red" class="fa fa-youtube"></i> YouTube</a
+    >
+  </li>
+  <li class="nav-link">
+    <a [href]="twitter" target="blank" rel="noreferrer noopener">
+      <i style="color: #1da1f2" class="fa fa-twitter"></i> Twitter
+    </a>
+  </li>
+  <li class="nav-link">
+    <a [href]="github" target="blank" rel="noreferrer noopener">
+      <i style="color: black" class="fa fa-github"></i> Github
+    </a>
+  </li>
 </ng-template>
-
-<app-loading></app-loading>

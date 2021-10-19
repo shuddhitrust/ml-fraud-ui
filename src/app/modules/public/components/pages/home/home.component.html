@@ -1,10 +1,54 @@
-<app-public-lists></app-public-lists>
-<div class="footer">
-  <small
-    >Copyright &copy; {{ currentYear }} Shuddhi Vidhaya Initiative, Shuddhi
-    Trust, All Rights Reserved</small
-  >
-  <small
-    ><a class="right-link" [routerLink]="privacyRoute">Privacy Policy</a></small
-  >
+<div class="content-container">
+  <div id="homeCarousel-wrapper">
+    <div id="homeCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <ng-container *ngFor="let video of videos; index as i">
+          <div [class]="slideClass(i)" data-interval="4000">
+            <iframe
+              style="max-width: 560px; width: 90vw; height: 315px"
+              [src]="video?.url"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            <div class="video-caption">
+              <p>{{ parseDate(video.date) }} - {{ video.description }}</p>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#homeCarousel"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#homeCarousel"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+  <hr />
+  <h1>Our Initiatives</h1>
+  <div id="initiatives">
+    <a
+      class="zoom-on-hover"
+      [href]="shuddhiVidhya"
+      target="blank"
+      rel="noreferrer noopener"
+      ><img
+        src="assets/images/svidhya/svidhyaBanner.png"
+        height="100px"
+        alt="Shuddhi Vidhya Logo"
+    /></a>
+  </div>
 </div>

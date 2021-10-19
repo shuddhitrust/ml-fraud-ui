@@ -3,6 +3,8 @@ import { resources, RESOURCE_ACTIONS } from './models';
 export const uiroutes = {
   ERROR_ROUTE: { route: 'error', auth: { resource: null, actions: [] } },
   HOME_ROUTE: { route: '', auth: { resource: null, actions: [] } },
+  ABOUT_ROUTE: { route: 'about', auth: { resource: null, actions: [] } },
+  CONTACT_ROUTE: { route: 'contact', auth: { resource: null, actions: [] } },
   ACTIVATE_ACCOUNT_ROUTE: {
     route: 'activate',
     auth: { resource: null, actions: [] },

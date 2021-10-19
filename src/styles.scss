@@ -10,10 +10,6 @@
 
 @import "./app/shared/common/shared-styles.css";
 
-// AG Grid Styles
-@import "../node_modules/ag-grid-community/dist/styles/ag-grid.css";
-@import "../node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css";
-
 // Uncomment this to get customized notification action button color
 // @import "src/app/shared/ngxs/notifications/notification.style.scss";
 // Include the common styles for Angular Material. We include this here so that you only
@@ -102,14 +98,75 @@ $starter-ui-theme: mat-light-theme(
 @include angular-material-theme($starter-ui-theme);
 
 /* You can add global styles to this file, and also import other style files */
+* {
+  font-family: Open-sans;
+  font-size: 1.02em;
+}
+
+p {
+  font-size: 1.1em;
+}
+
+:root {
+  --shuddhi-color: #0099ff;
+}
+a {
+  color: var(--shuddhi-color);
+}
+
+a:hover {
+  text-decoration: none;
+  color: rgb(38, 101, 143);
+}
+
+.content-container {
+  text-align: center;
+  margin: 10px;
+  font-size: 1.1em;
+}
+
+.zoom-on-hover:hover {
+  transform: scale(1.05);
+}
+
+.mat-snack-bar-container {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+}
+
+.validation-error {
+  color: #f44336;
+}
+
+.notification-success {
+  border: 2px solid rgba(129, 199, 132, 1);
+  border-radius: 5px;
+}
+
+.notification-failure {
+  border: 2px solid rgba(229, 115, 115, 1);
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 767px) {
+  .mat-snack-bar-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 70%;
+    bottom: 50px;
+    right: 0px;
+  }
+  .content-container {
+    margin: 5px;
+  }
+}
 
 html,
 body {
   height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Hahmlet, Roboto, "Helvetica Neue", sans-serif;
 }
 
 .auth-container {
