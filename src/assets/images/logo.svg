@@ -7,15 +7,15 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1021"
-   height="400"
-   viewBox="0 0 1021 400"
-   preserveAspectRatio="xMinYMin meet"
-   version="1.1"
    id="svg3799"
+   version="1.1"
+   preserveAspectRatio="xMinYMin meet"
+   viewBox="0 0 1033 400"
+   height="400"
+   width="1033"
    sodipodi:docname="logo.svg"
    inkscape:version="0.92.5 (0.92.5+69)"
-   inkscape:export-filename="/media/ryarasi/Additional SSD/Projects/Shuddhi Vidhya/Media/Logo/Logo/logo.png"
+   inkscape:export-filename="/media/ryarasi/Additional SSD/Projects/Shuddhi Trust/Media/Logo/Logo/logo.png"
    inkscape:export-xdpi="150"
    inkscape:export-ydpi="150">
   <sodipodi:namedview
@@ -29,31 +29,37 @@
      inkscape:pageshadow="2"
      inkscape:window-width="1848"
      inkscape:window-height="1016"
-     id="namedview14"
+     id="namedview21"
      showgrid="false"
+     inkscape:snap-text-baseline="true"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:zoom="0.28916667"
-     inkscape:cx="251.01839"
-     inkscape:cy="-529.67597"
+     inkscape:zoom="0.40894342"
+     inkscape:cx="-163.03758"
+     inkscape:cy="266.30331"
      inkscape:window-x="72"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
      inkscape:current-layer="e4_texte">
     <sodipodi:guide
-       position="425.48673,462.16662"
+       position="425.36023,337.17579"
        orientation="1,0"
-       id="guide821"
+       id="guide841"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="218.51585,321.18156"
-       orientation="0,1"
-       id="guide823"
+       position="948.25159,258.05831"
+       orientation="1,0"
+       id="guide843"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="212.8962,69.233294"
+       position="180.3428,320.94904"
        orientation="0,1"
-       id="guide825"
+       id="guide847"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="204.94889,68.98494"
+       orientation="0,1"
+       id="guide849"
        inkscape:locked="false" />
   </sodipodi:namedview>
   <metadata
@@ -71,44 +77,61 @@
   <defs
      id="defs3803" />
   <path
-     style="fill:none;stroke:none"
-     d="M 0,0 H 1200 V 400 H 0 Z"
      id="svgEditorBackground"
+     d="M 0,0 H 1200 V 400 H 0 Z"
+     style="fill:none;stroke:none"
      inkscape:connector-curvature="0" />
   <path
-     style="fill:#0099ff"
-     d="M 385,205 A 180,180 0 0 1 205,385 180,180 0 0 1 25,205 180,180 0 0 1 205,25 180,180 0 0 1 385,205 Z"
      id="e1_circle"
+     d="M 385,205 A 180,180 0 0 1 205,385 180,180 0 0 1 25,205 180,180 0 0 1 205,25 180,180 0 0 1 385,205 Z"
+     style="fill:#0099ff"
+     inkscape:export-xdpi="96.32"
+     inkscape:export-ydpi="96.32"
      inkscape:connector-curvature="0" />
   <path
-     style="fill:#ffffff"
-     d="M 331,205 A 126,126 0 0 1 205,331 126,126 0 0 1 79,205 126,126 0 0 1 205,79 126,126 0 0 1 331,205 Z"
      id="e2_circle"
+     d="M 331,205 A 126,126 0 0 1 205,331 126,126 0 0 1 79,205 126,126 0 0 1 205,79 126,126 0 0 1 331,205 Z"
+     style="fill:#ffffff"
+     inkscape:export-xdpi="96.32"
+     inkscape:export-ydpi="96.32"
      inkscape:connector-curvature="0" />
   <g
-     transform="translate(-0.05403458,3.7824208)"
-     aria-label="FUND"
+     id="e4_texte"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:204px;font-family:'Bitstream Charter';-inkscape-font-specification:'Bitstream Charter, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000"
-     id="e4_texte">
+     aria-label="FUND"
+     transform="translate(-0.05403458,3.7824208)"
+     inkscape:export-xdpi="96.32"
+     inkscape:export-ydpi="96.32">
     <text
-       id="text833"
-       y="184.51863"
-       x="418.70029"
+       xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:160px;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif Bold'"
-         y="184.51863"
+       x="418.70029"
+       y="184.51863"
+       id="text833"
+       inkscape:export-xdpi="96.32"
+       inkscape:export-ydpi="96.32"><tspan
+         sodipodi:role="line"
+         id="tspan831"
          x="418.70029"
-         id="tspan831">Shuddhi</tspan></text>
+         y="184.51863"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:160px;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif Bold'">Shuddhi</tspan><tspan
+         sodipodi:role="line"
+         x="418.70029"
+         y="278.5752"
+         id="tspan835"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:160px;line-height:1.25;font-family:Sahadeva;-inkscape-font-specification:Sahadeva;word-spacing:4.72999907px" /></text>
     <text
-       id="text839"
-       y="301.11139"
-       x="424.0256"
+       xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:160px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:120px;font-family:Likhan;-inkscape-font-specification:Likhan;letter-spacing:0px"
-         y="301.11139"
-         x="424.0256"
-         id="tspan837">Vidhya</tspan></text>
+       x="423.41428"
+       y="325.23264"
+       id="text839"
+       inkscape:export-xdpi="96.32"
+       inkscape:export-ydpi="96.32"><tspan
+         sodipodi:role="line"
+         id="tspan837"
+         x="423.41428"
+         y="325.23264"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:160px;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';letter-spacing:0px">Trust</tspan></text>
   </g>
 </svg>
