@@ -110,14 +110,6 @@ p {
 :root {
   --shuddhi-color: #0099ff;
 }
-a {
-  color: var(--shuddhi-color);
-}
-
-a:hover {
-  text-decoration: none;
-  color: rgb(38, 101, 143);
-}
 
 .content-container {
   text-align: center;
@@ -193,4 +185,15 @@ body {
 
 a {
   text-decoration: none;
+  color: var(--shuddhi-color);
+}
+
+a:hover {
+  text-decoration: none;
+  color: rgb(38, 101, 143);
+}
+
+hr {
+  margin-left: auto;
+  margin-right: auto;
 }

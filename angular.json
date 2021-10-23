@@ -36,7 +36,8 @@
                 "glob": "**/*",
                 "input": "node_modules/ace-builds/src-min",
                 "output": "./assets/ace-builds/"
-              }
+              },
+              { "glob": "**/assets/**", "input": "src/", "output": "/assets/" }
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
