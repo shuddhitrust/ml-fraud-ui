@@ -2,8 +2,20 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+const baseUrl = 'localhost:8000'
+const api_endpoint = `http://${baseUrl}}`;
+const websocket_api_endpoint = `ws://${baseUrl}}`;
+const cloudinary_endpoint = 'https://api.cloudinary.com/v1_1/<bucket-name>';
+const cloudinary_preset = '';
+
 export const environment = {
-  production: false
+  production: false,
+  api_endpoint,
+  file_uplod_endpoint: `${cloudinary_endpoint}/upload/`,
+  cloudinary_preset,
+  graphql_endpoint: `${api_endpoint}/graphql/`,
+  websocket_graphql_endpoint: `${websocket_api_endpoint}/graphql/`,
+  recaptcha_site_key: '6LcCWfIUAAAAALvgSsvP9dKFqC1EtVtkj0IQBC5y',
 };
 
 /*
