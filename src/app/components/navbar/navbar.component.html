@@ -1,0 +1,64 @@
+<!-- <p>
+    <mat-toolbar color="white" id="navbar">
+        <span><a style="text-decoration: none" routerLink=""><img id="logo" src="assets/images/logo.png" /><sup
+                    id="beta-label">beta</sup></a></span>
+        <span class="example-spacer"></span>
+        <span *ngTemplateOutlet="menubar"></span>
+    </mat-toolbar>
+</p>
+
+<ng-template #menubar>
+    <ng-container>
+        <button class="nav-button" [matMenuTriggerFor]="menu" aria-label="Menu Button" mat-icon-button>
+            <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" color="#0099ff">
+            <button mat-menu-item [routerLink]="paths.createTransaction">
+                <mat-icon>supporting_agent</mat-icon>
+                <span>Create transaction</span>
+            </button>
+            <button mat-menu-item [routerLink]="paths.transactions">
+                <mat-icon>dashboard</mat-icon>
+                <span>Transactions</span>
+            </button>
+            <button mat-menu-item [routerLink]="paths.rules">
+                <mat-icon>account_circle</mat-icon>
+                <span>Rules</span>
+            </button>
+        </mat-menu>
+    </ng-container>
+</ng-template> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <span><a style="text-decoration: none" routerLink=""><img id="logo" src="assets/images/logo.png" /><sup
+                    id="beta-label">beta</sup></a></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li [class]="menuLinkClass(paths.createTransaction)" [routerLink]="paths.createTransaction">
+                <a class="nav-link">
+                    <span>Create transaction</span>
+                </a>
+            </li>
+            <li [class]="menuLinkClass(paths.transactions)" [routerLink]="paths.transactions">
+                <a class="nav-link"> 
+                    <span>Transactions</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Rules
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item"  [routerLink]="paths.rules">Simple Rules</a>
+                    <a class="dropdown-item">Compound Rules</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
