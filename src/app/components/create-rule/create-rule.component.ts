@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-create-transaction-component',
-    templateUrl: './create-transaction.component.html',
-    styleUrls: ['./create-transaction.component.css'],
+    selector: 'app-create-rule-component',
+    templateUrl: './create-rule.component.html',
+    styleUrls: ['./create-rule.component.css'],
 })
-export class CreateTransactionComponent implements OnInit {
+export class CreateRuleComponent implements OnInit {
     constructor(private router: Router) { }
     ngOnInit() { }
     goHome() {

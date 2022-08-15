@@ -10,9 +10,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorPageComponent } from './components/error-page/error.component';
-import { CreateTransactionsComponent } from './components/create-transaction/create-transaction.component';
+import { CreateTransactionComponent } from './components/create-transaction/create-transaction.component';
 import { TransactionsComponent } from './components/transactions/transactions.component';
 import { RulesComponent } from './components/rules/rules.component';
+import { RouterModule } from '@angular/router';
+import { CreateRuleComponent } from './components/create-rule/create-rule.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { RulesComponent } from './components/rules/rules.component';
     NavbarComponent,
     HomeComponent,
     ErrorPageComponent,
-    CreateTransactionsComponent,
+    CreateTransactionComponent,
+    CreateRuleComponent,
     TransactionsComponent,
     RulesComponent
   ],
@@ -31,7 +34,8 @@ import { RulesComponent } from './components/rules/rules.component';
     MatMenuModule,
     MatToolbarModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
