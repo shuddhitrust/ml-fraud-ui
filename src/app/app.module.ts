@@ -15,6 +15,10 @@ import { TransactionsComponent } from './components/transactions/transactions.co
 import { RulesComponent } from './components/rules/rules.component';
 import { RouterModule } from '@angular/router';
 import { CreateRuleComponent } from './components/create-rule/create-rule.component';
+import { CommonModule } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,13 +33,18 @@ import { CreateRuleComponent } from './components/create-rule/create-rule.compon
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
     AppRoutingModule,
     MatIconModule,
     MatMenuModule,
     MatToolbarModule,
     MatDialogModule,
+    MatInputModule,
+    MatSelectModule,
     BrowserAnimationsModule,
-    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

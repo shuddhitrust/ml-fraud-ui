@@ -1,3 +1,37 @@
-<div class="hero">
-    <h2>Here you can create transactions</h2>
+<div class="form-container">
+    <button mat-icon-button (click)="goBack()" class="floating-back-button">
+        <mat-icon>keyboard_backspace</mat-icon>
+    </button>
+    <h2 data-cy="form-title" class="center-title">Transaction Form</h2>
+    <div class="col-lg-8 col-sm-12 form-container">
+        <form [formGroup]="transactionForm" novalidate (submit)="submitForm(transactionForm, formDirective)"
+            #formDirective="ngForm">
+            <mat-form-field class="col-lg-12 col-md-12 col-sm-12" appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name" required placeholder="Name" />
+                <small class="validation-error" *ngIf="
+          transactionForm.get('name')?.hasError('required') &&
+          formDirective.submitted
+        ">
+                    Name is required
+                </small>
+            </mat-form-field>
+            <mat-form-field class="col-lg-12 col-md-12 col-sm-12" appearance="outline">
+                <mat-label>Amount</mat-label>
+                <input matInput formControlName="amount" required placeholder="Amount" />
+                <small class="validation-error" *ngIf="
+                  transactionForm.get('amount')?.hasError('required') &&
+                  formDirective.submitted
+                ">
+                    Amount is required
+                </small>
+            </mat-form-field>
+            <button type="submit" class="floating-button-bottom" mat-raised-button color="primary">
+                {{ formSubmitting === true ? "Submitting..." : "Submit" }}
+            </button>
+        </form>
+
+    </div>
+    <br />
+    <br />
 </div>
