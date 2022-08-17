@@ -6,6 +6,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatIconModule } from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HomeComponent } from './components/home/home.component';
@@ -19,6 +20,7 @@ import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -39,12 +41,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     AppRoutingModule,
     MatIconModule,
+    MatButtonModule,
     MatMenuModule,
     MatToolbarModule,
     MatDialogModule,
     MatInputModule,
     MatSelectModule,
     BrowserAnimationsModule,
+    AgGridModule
   ],
   providers: [],
   bootstrap: [AppComponent]

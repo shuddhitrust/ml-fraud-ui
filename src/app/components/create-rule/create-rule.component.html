@@ -4,26 +4,36 @@
 </button>
 <h2 data-cy="form-title" class="center-title">Rule Form</h2>
 <div class="col-lg-8 col-sm-12 form-container">
-    <form [formGroup]="transactionForm" novalidate (submit)="submitForm(transactionForm, formDirective)"
+    <form [formGroup]="ruleForm" novalidate (submit)="submitForm(ruleForm, formDirective)"
         #formDirective="ngForm">
         <mat-form-field class="col-lg-12 col-md-12 col-sm-12" appearance="outline">
-            <mat-label>Name</mat-label>
-            <input matInput formControlName="name" required placeholder="Name" />
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title" required placeholder="Title" />
             <small class="validation-error" *ngIf="
-          transactionForm.get('name')?.hasError('required') &&
+          ruleForm.get('title')?.hasError('required') &&
           formDirective.submitted
         ">
-                Name is required
+                Title is required
             </small>
         </mat-form-field>
         <mat-form-field class="col-lg-12 col-md-12 col-sm-12" appearance="outline">
-            <mat-label>Amount</mat-label>
-            <input matInput formControlName="amount" required placeholder="Amount" />
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="title" required placeholder="Description" ></textarea>
             <small class="validation-error" *ngIf="
-                  transactionForm.get('amount')?.hasError('required') &&
+                  ruleForm.get('description')?.hasError('required') &&
                   formDirective.submitted
                 ">
-                Amount is required
+                Description is required
+            </small>
+        </mat-form-field>
+        <mat-form-field class="col-lg-12 col-md-12 col-sm-12" appearance="outline">
+            <mat-label>Weight</mat-label>
+            <input matInput formControlName="weight" required placeholder="Weight" />
+            <small class="validation-error" *ngIf="
+                  ruleForm.get('weight')?.hasError('required') &&
+                  formDirective.submitted
+                ">
+                Weight is required
             </small>
         </mat-form-field>
         <button type="submit" class="floating-button-bottom" mat-raised-button color="primary">

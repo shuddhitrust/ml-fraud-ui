@@ -1,3 +1,7 @@
-<div class="hero">
-    <h2>Here you can view all the transactions</h2>
-</div>
+<h2>Transactions</h2>
+<ag-grid-angular 
+    style="width: 80vw; height: 200px;" 
+    class="ag-theme-alpine center"
+    [rowData]="rowData" 
+    [columnDefs]="columnDefs">
+</ag-grid-angular>
