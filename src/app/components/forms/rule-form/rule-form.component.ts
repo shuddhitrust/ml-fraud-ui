@@ -9,7 +9,10 @@ import {
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { Clipboard } from '@angular/cdk/clipboard';
-import { emptyRuleRecord, emptyTransactionRecord, Rule, Transaction } from 'src/app/models';
+import { emptyRuleItem, emptyRuleRecord, emptyTransactionRecord, MatSelectOption, Rule, RuleItem, Transaction } from 'src/app/models';
+import { arithmeticOperatorOptions, attributeTypeOptions, attributeOptions, comparativeOperatorOptions, logicalOperatorOptions, operatorTypeOptions } from 'src/app/constants';
+
+
 
 @Component({
   selector: 'app-rule-form',
@@ -22,6 +25,13 @@ import { emptyRuleRecord, emptyTransactionRecord, Rule, Transaction } from 'src/
 export class RuleFormComponent implements OnInit {
   formSubmitting: boolean = false;
   ruleForm: FormGroup;
+  rule: RuleItem[] = [emptyRuleItem()]
+  attributeTypeOptions: MatSelectOption[] = attributeTypeOptions
+  operatorTypeOptions: MatSelectOption[] = operatorTypeOptions
+  attributeOptions: MatSelectOption[] = attributeOptions
+  arithmeticOperatorOptions: MatSelectOption[] = arithmeticOperatorOptions
+  comparativeOperatorOptions: MatSelectOption[] = comparativeOperatorOptions
+  logicalOperatorOptions: MatSelectOption[] = logicalOperatorOptions
 
   constructor(
     private location: Location,
@@ -31,6 +41,7 @@ export class RuleFormComponent implements OnInit {
     public clipboard: Clipboard
   ) {
     this.ruleForm = this.setupRuleFormGroup();
+    this.rule = this.ruleForm.get('rule')?.value ? this.ruleForm.get('rule')?.value : [emptyRuleItem]
   }
 
   setupRuleFormGroup = (
@@ -47,7 +58,30 @@ export class RuleFormComponent implements OnInit {
     });
   };
 
+  getAttributeTypeForIndex(index: number): string {
+    return this.rule[index]['type']
+  }
 
+  getValueForIndex(index: number): any {
+    return this.rule[index]['value']
+  }
+
+  onAttributeTypeChange(event: any, index: number) {
+    console.log('this.rule from type => ', this.rule)
+
+    this.rule[index]['type'] = event
+  }
+  
+  onAttributeValueChange(event: any, index: number) {
+    console.log('this.rule from value => ', this.rule)
+    const beforeChangeValue = this.rule[index]['value'].toString();
+    console.log()
+    this.rule[index]['value'] = event;
+    if( this.rule[index]['value'] != '') {
+      this.rule.push(emptyRuleItem())
+      console.log('this.rule => ',this.rule)
+    }
+  }
 
   ngOnInit(): void {
 
