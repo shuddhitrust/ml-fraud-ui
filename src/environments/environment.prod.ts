@@ -1,3 +1,6 @@
+const api_base_url = 'https://fl-ml-fraud.herokuapp.com'
+
 export const environment = {
-  production: true
+  api: api_base_url,
+  production: false
 };

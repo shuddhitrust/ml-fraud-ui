@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateRuleComponent } from './components/create-rule/create-rule.component';
-import { CreateTransactionComponent } from './components/create-transaction/create-transaction.component';
-import { ErrorPageComponent } from './components/error-page/error.component';
-import { HomeComponent } from './components/home/home.component';
-import { RulesComponent } from './components/rules/rules.component';
-import { TransactionsComponent } from './components/transactions/transactions.component';
+import { RuleFormComponent } from './components/forms/rule-form/rule-form.component';
+import { TransactionFormComponent } from './components/forms/transaction-form/transaction-form.component';
+import { ErrorPageComponent } from './components/pages/error-page/error.component';
+import { HomeComponent } from './components/pages/home/home.component';
+import { RulesComponent } from './components/tables/rules/rules.component';
+import { TransactionsComponent } from './components/tables/transactions/transactions.component';
 
 export const paths = {
     home: '',
@@ -32,11 +32,11 @@ const routes: Routes = [
     },
     {
         path: paths.createTransaction,
-        component: CreateTransactionComponent
+        component: TransactionFormComponent
     },
     {
         path: paths.createRule,
-        component: CreateRuleComponent
+        component: RuleFormComponent
     },    
     {
         path: paths.error,

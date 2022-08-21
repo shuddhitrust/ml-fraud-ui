@@ -37,3 +37,7 @@ export const emptyRuleRecord: Rule = {
     active: true,
     createdAt: currentDateTime()
 }
+
+export type colDef = {
+    field: string;
+}
