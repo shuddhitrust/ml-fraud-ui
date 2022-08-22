@@ -1,8 +1,39 @@
 export type Transaction = {
-    id?: number | null,
-    name?: string | null,
-    amount?: number | null,
-    datetime?: string | null
+  fraud: string | number,
+  trx_datetime: string | number,
+  trx_unique_id: string | number,
+  type_call: string | number,
+  transaction_type: string | number,
+  trx_amount_total: string | number,
+  md_payer_document_type: string | number,
+  md_payer_phone_number: string | number,
+  md_payer_document_number: string | number,
+  md_payer_email: string | number,
+  pay_card_iin: string | number,
+  pay_card_md_bank: string | number,
+  pay_card_md_brand: string | number,
+  pay_card_md_on_us: string | number,
+  pay_card_md_channel: string | number,
+  md_trx_channel: string | number,
+  md_trx_pos_condition: string | number,
+  md_trx_operation_code: string | number,
+  md_pay_bank_account_owner_document_type: string | number,
+  md_pay_bank_account_finantial_inst_id: string | number,
+  md_pay_bank_account_compensation_inst_id: string | number,
+  md_support_trace_id: string | number,
+  md_trx_reconciliation_id: string | number,
+  md_payer_country: string | number,
+  response_trx_acquirer: string | number,
+  merchant_on_us: string | number,
+  md_merchant_store_id: string | number,
+  md_merchant_terminal_id: string | number,
+  md_merchant_category_code: string | number,
+  md_merchant_submerchant_city: string | number,
+  md_merchant_submerchant_name: string | number,
+  md_merchant_acquirer_submerchant_id: string | number,
+  md_merchant_tributary_document_type: string | number,
+  md_pay_method: string | number,
+  trx_installments_number: string | number
 };
 
 export type RuleItem = {
@@ -22,10 +53,41 @@ export type Rule = {
 }
 
 export const emptyTransactionRecord: Transaction = {
-    id: null,
-    name: null,
-    amount: null,
-    datetime: null
+  fraud: '',
+  trx_datetime: '',
+  trx_unique_id: '',
+  type_call: '',
+  transaction_type: '',
+  trx_amount_total: '',
+  md_payer_document_type: '',
+  md_payer_phone_number: '',
+  md_payer_document_number: '',
+  md_payer_email: '',
+  pay_card_iin: '',
+  pay_card_md_bank: '',
+  pay_card_md_brand: '',
+  pay_card_md_on_us: '',
+  pay_card_md_channel: '',
+  md_trx_channel: '',
+  md_trx_pos_condition: '',
+  md_trx_operation_code: '',
+  md_pay_bank_account_owner_document_type: '',
+  md_pay_bank_account_finantial_inst_id: '',
+  md_pay_bank_account_compensation_inst_id: '',
+  md_support_trace_id: '',
+  md_trx_reconciliation_id: '',
+  md_payer_country: '',
+  response_trx_acquirer: '',
+  merchant_on_us: '',
+  md_merchant_store_id: '',
+  md_merchant_terminal_id: '',
+  md_merchant_category_code: '',
+  md_merchant_submerchant_city: '',
+  md_merchant_submerchant_name: '',
+  md_merchant_acquirer_submerchant_id: '',
+  md_merchant_tributary_document_type: '',
+  md_pay_method: '',
+  trx_installments_number: ''
 }
 
 export const emptyRuleItem = (): RuleItem=> {
@@ -53,5 +115,5 @@ export type colDef = {
 
 export type MatSelectOption = {
   label: string;
-  value: number | string;
+  value: string;
 };

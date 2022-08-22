@@ -9,7 +9,8 @@ import {
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { Clipboard } from '@angular/cdk/clipboard';
-import { emptyTransactionRecord, Transaction } from 'src/app/models';
+import { emptyTransactionRecord, MatSelectOption, Transaction } from 'src/app/models';
+import { attributeOptions, getRandomFraudTransaction, getRandomNonFraudTransaction } from 'src/app/constants';
 
 @Component({
   selector: 'app-transaction-form',
@@ -22,7 +23,9 @@ import { emptyTransactionRecord, Transaction } from 'src/app/models';
 export class TransactionFormComponent implements OnInit {
   formSubmitting: boolean = false;
   transactionForm: FormGroup;
-
+  attributeOptions: MatSelectOption[] = attributeOptions.filter(attribute => {
+      return attribute.value != 'fraud'
+    })
   constructor(
     private location: Location,
     private route: ActivatedRoute,
@@ -34,16 +37,27 @@ export class TransactionFormComponent implements OnInit {
   }
 
   setupTransactionFormGroup = (
-    transactionFormRecord: Transaction = emptyTransactionRecord
+    transactionFormRecord: any = emptyTransactionRecord
   ): FormGroup => {
-    return this.fb.group({
-      id: [transactionFormRecord?.id],
-      name: [transactionFormRecord?.name],
-      amount: [transactionFormRecord?.amount]
-    });
+    let group: any = {};
+
+    this.attributeOptions.forEach((attribute: MatSelectOption) => {
+      const field = attribute?.value;
+      group[field] = transactionFormRecord[field]
+    })
+
+    console.log('Group just before form setup',{group})
+
+    return this.fb.group(group);
   };
 
+  populateFraudTransaction = () => {
+    this.transactionForm = this.setupTransactionFormGroup(getRandomFraudTransaction())
+  }
 
+  populateNonFraudTransaction = () => {
+    this.transactionForm = this.setupTransactionFormGroup(getRandomNonFraudTransaction())
+  }
 
   ngOnInit(): void {
 

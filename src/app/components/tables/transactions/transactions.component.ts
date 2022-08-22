@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api/api.service';
+import { attributeOptions } from 'src/app/constants';
 import { Transaction } from 'src/app/models';
 
 @Component({
@@ -13,10 +14,11 @@ export class TransactionsComponent implements OnInit {
     defaultColDef = {
         resizable: true,
     }
-    columnDefs = [{field: 'title'}, {field: 'amount'}]
+    columnDefs = attributeOptions.map(attribute => {
+        return {field: attribute.value, headerName: attribute.label}
+    })
     constructor(private router: Router, private apiService: ApiService) {
         this.getTransactions();
-        this.getColumns();
      }
 
     ngOnInit() { }
@@ -29,19 +31,8 @@ export class TransactionsComponent implements OnInit {
         });
     }
 
-    generatecolumnDefs(attributes:string[] = []) {
-        this.columnDefs = attributes.map(header => {
-            return {field: header}
-        })
-    }
 
-    getColumns(): void {
-        this.apiService.getAttributes()
-        .subscribe(attributes => {
-            this.generatecolumnDefs(attributes)
-            console.log({attributes})
-        });
-    }
+
     
     goHome() {
         this.router.navigateByUrl('');

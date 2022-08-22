@@ -11,7 +11,7 @@
             <div *ngIf="index%2==0;">
                 <ng-container *ngTemplateOutlet="attributeLayerTemplate; context: { index: index }"></ng-container>
             </div>
-            <div *ngIf="index%2==0;">
+            <div *ngIf="index%2!=0;">
                 <ng-container *ngTemplateOutlet="operatorLayerTemplate; context: { index: index }"></ng-container>
             </div>
         </div>
@@ -60,7 +60,7 @@
 <ng-template #attributeLayerTemplate let-index="index">
         <mat-form-field class="menu-item col-lg-6 col-md-6 col-sm-12" appearance="outline">
             <mat-label>Attribute Type</mat-label>
-            <mat-select [(ngModel)]="rule[index]['type']" (ngModelChange)="onAttributeTypeChange($event, index)">
+            <mat-select [ngModel]="rule[index]['type']" (ngModelChange)="onAttributeTypeChange($event, index)">
                 <mat-option *ngFor="let type of attributeTypeOptions" [value]="type.value">
                     {{ type.label }}
                 </mat-option>
@@ -68,7 +68,7 @@
         </mat-form-field>
         <mat-form-field *ngIf="getAttributeTypeForIndex(index) == 'attribute'" class="menu-item col-lg-6 col-md-6 col-sm-12" appearance="outline">
             <mat-label>Attribute Value</mat-label>
-            <mat-select [(ngModel)]="rule[index]['value']" (ngModelChange)="onAttributeValueChange($event, index)">
+            <mat-select [ngModel]="rule[index]['value']" (ngModelChange)="onAttributeValueChange($event, index)">
                 <mat-option *ngFor="let attribute of attributeOptions" [value]="attribute.value">
                     {{ attribute.label }}
                 </mat-option>
@@ -76,7 +76,7 @@
         </mat-form-field>
         <mat-form-field *ngIf="getAttributeTypeForIndex(index) == 'value'" class="menu-item col-lg-6 col-md-6 col-sm-12" appearance="outline">
             <mat-label>Value</mat-label>
-            <input matInput [(ngModel)]="rule[index]['value']" (ngModelChange)="onAttributeValueChange($event, index)" required placeholder="Weight" />
+            <input matInput [ngModel]="rule[index]['value']" (ngModelChange)="onAttributeValueChange($event, index)" required placeholder="Weight" />
         </mat-form-field>                
 </ng-template>
 
@@ -84,7 +84,7 @@
 <ng-template #operatorLayerTemplate let-index="index">
     <mat-form-field class="menu-item col-lg-6 col-md-6 col-sm-12" appearance="outline">
         <mat-label>Operator Type</mat-label>
-        <mat-select [(ngModel)]="rule[index]['type']" (ngModelChange)="onAttributeTypeChange($event, index)">
+        <mat-select [ngModel]="rule[index]['type']" (ngModelChange)="onAttributeTypeChange($event, index)">
             <mat-option *ngFor="let type of operatorTypeOptions" [value]="type.value">
                 {{ type.label }}
             </mat-option>
@@ -93,7 +93,7 @@
     <mat-form-field *ngIf="getAttributeTypeForIndex(index) == 'arithmetic'" class="menu-item col-lg-6 col-md-6 col-sm-12"
         appearance="outline">
         <mat-label>Arithmetic operator</mat-label>
-        <mat-select [(ngModel)]="rule[index]['value']" (ngModelChange)="onAttributeValueChange($event, index)">
+        <mat-select [ngModel]="rule[index]['value']" (ngModelChange)="onAttributeValueChange($event, index)">
             <mat-option *ngFor="let operator of arithmeticOperatorOptions" [value]="operator.value">
                 {{ operator.label }}
             </mat-option>
@@ -102,7 +102,7 @@
     <mat-form-field *ngIf="getAttributeTypeForIndex(index) == 'comparative'" class="menu-item col-lg-6 col-md-6 col-sm-12"
         appearance="outline">
         <mat-label>Comparative operator</mat-label>
-        <mat-select [(ngModel)]="rule[index]['value']" (ngModelChange)="onAttributeValueChange($event, index)">
+        <mat-select [ngModel]="rule[index]['value']" (ngModelChange)="onAttributeValueChange($event, index)">
             <mat-option *ngFor="let operator of comparativeOperatorOptions" [value]="operator.value">
                 {{ operator.label }}
             </mat-option>
@@ -111,7 +111,7 @@
     <mat-form-field *ngIf="getAttributeTypeForIndex(index) == 'logical'" class="menu-item col-lg-6 col-md-6 col-sm-12"
         appearance="outline">
         <mat-label>Logical operator</mat-label>
-        <mat-select [(ngModel)]="rule[index]['value']" (ngModelChange)="onAttributeValueChange($event, index)">
+        <mat-select [ngModel]="rule[index]['value']" (ngModelChange)="onAttributeValueChange($event, index)">
             <mat-option *ngFor="let operator of logicalOperatorOptions" [value]="operator.value">
                 {{ operator.label }}
             </mat-option>
