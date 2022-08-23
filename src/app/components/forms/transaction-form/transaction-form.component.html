@@ -18,7 +18,7 @@
             <span *ngFor="let attribute of attributeOptions; let index = index">
                 <mat-form-field class="col-lg-12 col-md-12 col-sm-12" appearance="outline">
                     <mat-label>{{attribute.label}}</mat-label>
-                    <input matInput [formControlName]="attribute.value" required [placeholder]="attribute.label" />
+                    <input matInput [formControlName]="attribute.value" [placeholder]="attribute.label" />
                 </mat-form-field>
             </span>
             <button type="submit" class="floating-button-bottom" mat-raised-button color="primary">
