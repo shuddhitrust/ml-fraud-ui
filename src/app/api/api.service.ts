@@ -79,7 +79,9 @@ export class ApiService {
   }
 
   getRule(id:number): Observable<Rule> {
-    return this.http.get<Rule>(this.ApiUrl(this.apiPaths.getRule))
+    const path = `${this.apiPaths.getRule}?id=${id}`;
+    console.log('get rule api endpoint => ', path)
+    return this.http.get<Rule>(this.ApiUrl(path))
       .pipe(
         tap(_ => console.log('Fetched Rule')),
         catchError(this.handleError<Rule>('getRule'))

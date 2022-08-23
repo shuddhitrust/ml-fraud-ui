@@ -3,8 +3,8 @@
     <mat-icon>keyboard_backspace</mat-icon>
 </button>
 <h2 data-cy="form-title" class="center-title">Rule Form</h2>
-<div class="col-lg-10 col-md-12 col-sm-12 form-container">
-    <form [formGroup]="ruleForm" class="col-lg-12 col-md-12 col-sm-12" novalidate (submit)="submitForm(ruleForm, formDirective)"
+<div *ngIf="!formLoading; else loading" class="col-lg-10 col-md-12 col-sm-12 form-container">
+    <form  [formGroup]="ruleForm" class="col-lg-12 col-md-12 col-sm-12" novalidate (submit)="submitForm(ruleForm, formDirective)"
         #formDirective="ngForm">
         <hr />
         <div formArrayName="rule" *ngFor="let item of getRule().controls; let index = index">
@@ -120,3 +120,6 @@
 </div>
 
 
+<ng-template #loading>
+    <app-loader></app-loader>
+</ng-template>
