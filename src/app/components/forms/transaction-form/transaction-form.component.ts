@@ -11,6 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { emptyTransactionRecord, MatSelectOption, Transaction } from 'src/app/models';
 import { attributeOptions, getRandomFraudTransaction, getRandomNonFraudTransaction } from 'src/app/constants';
+import { ApiService } from 'src/app/api/api.service';
 
 @Component({
   selector: 'app-transaction-form',
@@ -31,7 +32,8 @@ export class TransactionFormComponent implements OnInit {
     private route: ActivatedRoute,
     private fb: FormBuilder,
     public dialog: MatDialog,
-    public clipboard: Clipboard
+    public clipboard: Clipboard,
+    private apiService: ApiService
   ) {
     this.transactionForm = this.setupTransactionFormGroup();
   }
@@ -71,5 +73,7 @@ export class TransactionFormComponent implements OnInit {
 
   submitForm(form: FormGroup, formDirective: FormGroupDirective) {
     this.formSubmitting = true;
+    console.log("Submitting transaction => ", form.value)
+    this.apiService.submitTransaction(form.value)
   }
 }
