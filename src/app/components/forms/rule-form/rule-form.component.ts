@@ -9,7 +9,6 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { Clipboard } from '@angular/cdk/clipboard';
 import { emptyRuleItem, emptyRuleRecord, emptyTransactionRecord, MatSelectOption, Rule, RuleItem, Transaction } from 'src/app/models';
 import { arithmeticOperatorOptions, attributeTypeOptions, attributeOptions, comparativeOperatorOptions, logicalOperatorOptions, operatorTypeOptions } from 'src/app/constants';
 import { ApiService } from 'src/app/api/api.service';
